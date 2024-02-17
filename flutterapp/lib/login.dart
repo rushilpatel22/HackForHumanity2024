@@ -22,11 +22,16 @@ class MyApp extends StatelessWidget {
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
-  
+
   bool _obscureText = true;
 
   @override
+
+
   Widget build(BuildContext context) {
+    void initState() {
+    bool _passwordVisible = false;
+  }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -45,20 +50,10 @@ class MyCustomForm extends StatefulWidget {
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your password',
-          ),
-        ),
-        body: DefaultTextStyle.merge(
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-          child: const Center(
-            child: Text('Not a member?'),
+
           ),
         ),
       ],
     );
   }
 }
-
-
