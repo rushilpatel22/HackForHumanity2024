@@ -45,7 +45,6 @@ class MyCustomForm extends StatefulWidget {
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your password',
-
           ),
         ),
       ],
