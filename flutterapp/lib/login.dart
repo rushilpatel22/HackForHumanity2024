@@ -47,7 +47,18 @@ class MyCustomForm extends StatefulWidget {
               labelText: 'Enter your password',
           ),
         ),
+        body: DefaultTextStyle.merge(
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+          child: const Center(
+            child: Text('Not a member?'),
+          ),
+        ),
       ],
     );
   }
 }
+
+
