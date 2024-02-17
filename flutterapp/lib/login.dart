@@ -22,33 +22,53 @@ class MyApp extends StatelessWidget {
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
-  
+
   bool _obscureText = true;
 
   @override
+
+
   Widget build(BuildContext context) {
+    void initState() {
+    bool _passwordVisible = false;
+  }
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextFormField(
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter your username',
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                labelText: 'Enter your username',
+              ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextFormField(
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter your password',
-
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                labelText: 'Enter your password',
+                suffixIcon: IconButton(
+            icon: Icon(
+              // Based on passwordVisible state choose the icon
+               _passwordVisible
+               ? Icons.visibility
+               : Icons.visibility_off,
+               color: Theme.of(context).primaryColorDark,
+               ),
+            onPressed: () {
+               // Update the state i.e. toogle the state of passwordVisible variable
+               setState(() {
+                   _passwordVisible = !_passwordVisible;
+               });
+             },
+            ),
           ),
-        ),//
-      ],
-    );
+              ),
+            ),
+          ),
+        ]);
   }
 }
