@@ -55,6 +55,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
             )
           ),
         ),
+        ElevatedButton(
+          style: style,
+          onPressed: () {},
+          child: const Text('Enabled'),
+        ),
       ],
     );
   }
