@@ -55,11 +55,19 @@ class _MyCustomFormState extends State<MyCustomForm> {
             )
           ),
         ),
-        ElevatedButton(
-          style: style,
-          onPressed: () {},
-          child: const Text('Enabled'),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          child: Text('Not a member? Register here!'),
         ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: <Widget>[
+            ElevatedButton(
+            onPressed: () {},
+            ),
+            
+          ]
+        )
       ],
     );
   }
