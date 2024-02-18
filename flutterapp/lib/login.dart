@@ -23,15 +23,16 @@ class MyApp extends StatelessWidget {
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
+  @override
+  State<MyCustomForm> createState() => _MyCustomFormState();
+}
+
+class _MyCustomFormState extends State<MyCustomForm> {
   bool _obscureText = true;
 
-  @override
-
+  bool _passwordVisible = false;
 
   Widget build(BuildContext context) {
-    void initState() {
-    bool _passwordVisible = false;
-  }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -47,11 +48,17 @@ class MyCustomForm extends StatefulWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: TextFormField(
+            obscureText: true,
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your password',
-
+            )
           ),
+        ),
+        ElevatedButton(
+          style: style,
+          onPressed: () {},
+          child: const Text('Enabled'),
         ),
       ],
     );
